@@ -1,0 +1,44 @@
+.sidebarChat{
+    display: flex;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f6f6f6;
+}
+.sidebarChat:hover{
+    background-color: #ebebeb;
+}
+ h2{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.sidebarChat__info{
+    margin-left: 15px;
+}
+a{
+    text-decoration : none !important;
+    color: black;
+}
+.sidebarChat__info > p{
+    font-weight: 400;
+}
+.sidebar__read{
+    font-size: x-small;
+}
+.Sidebar__msgTime{
+    /* position: relative; */
+    font-size: x-small;
+    color: black;
+    float: right;
+    
+}
+
+.sidebar__read> .MuiSvgIcon-root{
+    font-size: medium;
+}
+.sidebar__read> .chat__read> .MuiSvgIcon-root{
+    font-size: medium;
+}
+
+.chat__read {
+    color: blue;
+}
