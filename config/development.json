@@ -1,0 +1,5 @@
+{
+    "db": "mongodb+srv://admin:0DLXOcuvD4KRskTN@cluster0.mrvgu.mongodb.net/whatsappdb?retryWrites=true&w=majority",
+    "jwtPrivateKey": "SomePrivateKey"
+
+}
