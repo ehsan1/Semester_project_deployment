@@ -5,12 +5,12 @@ const validateMessage = require('../../middlewares/validateMessage');
 const auth = require("../../middlewares/auth");
 const admin = require("../../middlewares/admin");
 var {Message} = require("../../models/message"); 
-router.get("/", async(req, res)=>{
+router.get("/",auth, async(req, res)=>{
     let messages = await Message.find();
     return res.send(messages);
 });
 //Insert a record
-router.post('/add',validateMessage, async function(req, res, next) {
+router.post('/add',auth,validateMessage, async function(req, res, next) {
   let message= new Message();
   message.user_to = req.body.user_to;
   message.user_from = req.body.user_from;
@@ -32,21 +32,21 @@ router.delete("/delete/:id",auth,admin, async(req, res)=>{
 });
 
 // User delete
-router.put("/trash/:id", async(req, res)=>{
+router.put("/trash/:id",auth, async(req, res)=>{
     let message = await Message.findById(req.params.id);
     message.deleted = true;
     await message.save();
     return res.send(message);
 });
 // Opened
-router.put("/open/:id", async(req, res)=>{
+router.put("/open/:id",auth, async(req, res)=>{
     let message = await Message.findById(req.params.id);
     message.opened = true;
     await message.save();
     return res.send(message);
 });
  // viewed
-router.put("/view/:id", async(req, res)=>{
+router.put("/view/:id",auth, async(req, res)=>{
     let message = await Message.findById(req.params.id);
     message.viewed = true;
     await message.save();
