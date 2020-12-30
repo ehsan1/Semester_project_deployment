@@ -52,4 +52,5 @@ router.put("/view/:id",auth, async(req, res)=>{
     await message.save();
     return res.send(message);
 });
+
 module.exports = router;
